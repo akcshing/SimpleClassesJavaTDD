@@ -8,12 +8,17 @@ public class PrinterTest {
 
     @Before
     public void before() {
-        printer = new Printer(20);
+        printer = new Printer(20, 40);
     }
 
     @Test
     public void canGetSheets(){
         assertEquals(20, printer.getNumberOfSheets());
+    }
+
+    @Test
+    public void canGetToner() {
+        assertEquals(40, printer.getToner());
     }
 
     @Test
@@ -31,5 +36,11 @@ public class PrinterTest {
     public void canRefill() {
         printer.refill(10);
         assertEquals(30, printer.getNumberOfSheets());
+    }
+
+    @Test
+    public void canLoseTonerOnPrinting() {
+        printer.print(2, 5);
+        assertEquals(30, printer.getToner());
     }
 }
