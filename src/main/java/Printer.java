@@ -10,9 +10,12 @@ public class Printer {
         return this.numberOfSheets;
     }
 
-    public void print(int numberOfPages, int numberOfCopies) {
+    public String print(int numberOfPages, int numberOfCopies) {
         int printSheets = numberOfPages * numberOfCopies;
-
+            if (printSheets > this.numberOfSheets) {
+                return "Not enough paper";
+            }
         this.numberOfSheets -= printSheets;
+            return "Printing...";
     }
 }
