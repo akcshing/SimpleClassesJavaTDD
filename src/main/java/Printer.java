@@ -18,4 +18,8 @@ public class Printer {
         this.numberOfSheets -= printSheets;
             return "Printing...";
     }
+
+    public void refill(int numberOfRefill) {
+        this.numberOfSheets += numberOfRefill;
+    }
 }

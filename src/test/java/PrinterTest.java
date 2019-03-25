@@ -26,4 +26,10 @@ public class PrinterTest {
     public void failToPrintWithoutEnoughSheets() {
         assertEquals("Not enough paper", printer.print(4, 6));
     }
+
+    @Test
+    public void canRefill() {
+        printer.refill(10);
+        assertEquals(30, printer.getNumberOfSheets());
+    }
 }
